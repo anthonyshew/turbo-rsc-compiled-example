@@ -1,6 +1,6 @@
 import { Button } from "./button";
 
-export function ServerComponent() {
+export function Hero() {
   return (
     <div>
       <h1>Server Component</h1>

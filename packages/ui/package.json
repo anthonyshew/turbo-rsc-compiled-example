@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./server-component": "./dist/server-component.js",
+    "./hero": "./dist/hero.js",
     "./button": "./dist/button.js",
     "./card": "./dist/card.js",
     "./code": "./dist/code.js"
