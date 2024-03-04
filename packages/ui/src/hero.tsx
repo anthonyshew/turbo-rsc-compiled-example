@@ -1,10 +1,26 @@
-import { Button } from "./button";
+"use client";
 
-export function Hero() {
+import { Button } from "./button";
+import { HeroTitle } from "./hero-title";
+
+export function Hero({
+  someServerActionHandler,
+  someClientHandler,
+  title,
+}: {
+  title: string;
+  someServerActionHandler?: () => void;
+  someClientHandler?: () => void;
+}) {
   return (
     <div>
-      <h1>Server Component</h1>
-      <Button appName="test">Test</Button>
+      <HeroTitle title={title} />
+      <Button
+        clientClickHandler={someClientHandler}
+        serverClickHandler={someServerActionHandler}
+      >
+        Test
+      </Button>
     </div>
   );
 }

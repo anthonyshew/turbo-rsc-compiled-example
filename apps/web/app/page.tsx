@@ -4,6 +4,7 @@ import { Code } from "@repo/ui/code";
 import styles from "./page.module.css";
 import { Button } from "@repo/ui/button";
 import { Hero } from "@repo/ui/hero";
+import { HeroClientWrapper } from "./_components/ClientyBoi";
 
 function Gradient({
   conic,
@@ -55,7 +56,14 @@ const LINKS = [
 export default function Page(): JSX.Element {
   return (
     <main className={styles.main}>
-      <Hero />
+      <HeroClientWrapper />
+      <Hero
+        title="Server-ish boi"
+        someServerActionHandler={async () => {
+          "use server";
+          console.log("Hello, GloopBloopan!");
+        }}
+      />
       <div className={styles.description}>
         <p>
           examples/basic&nbsp;
@@ -80,9 +88,7 @@ export default function Page(): JSX.Element {
         </div>
       </div>
 
-      <Button appName="web" className={styles.button}>
-        Click me!
-      </Button>
+      <Button className={styles.button}>Click me!</Button>
 
       <div className={styles.hero}>
         <div className={styles.heroContent}>

@@ -5,14 +5,23 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-  appName: string;
+  serverClickHandler?(): void;
+  clientClickHandler?(): void;
 }
 
-export const Button = ({ children, className, appName }: ButtonProps) => {
+export const Button = ({
+  children,
+  serverClickHandler,
+  clientClickHandler,
+  className,
+}: ButtonProps) => {
   return (
     <button
       className={className}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
+      onClick={() => {
+        clientClickHandler?.();
+        serverClickHandler?.();
+      }}
     >
       {children}
     </button>

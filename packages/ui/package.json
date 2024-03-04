@@ -3,12 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./hero": "./dist/hero.js",
-    "./button": "./dist/button.js",
-    "./card": "./dist/card.js",
-    "./code": "./dist/code.js"
+    "./hero": {
+      "types": "./src/hero.tsx",
+      "default": "./dist/hero.js"
+    },
+    "./button": {
+      "types": "./src/button.tsx",
+      "default": "./dist/button.js"
+    },
+    "./card": {
+      "types": "./src/card.tsx",
+      "default": "./dist/card.js"
+    },
+    "./code": {
+      "types": "./src/code.tsx",
+      "default": "./dist/code.js"
+    }
   },
   "scripts": {
+    "dev": "tsc --watch --preserveWatchOutput",
     "build": "tsc",
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component"
